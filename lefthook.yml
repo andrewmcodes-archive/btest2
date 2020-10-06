@@ -1,0 +1,24 @@
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+#
+pre-push:
+  commands:
+    packages-audit:
+      tags: frontend security
+      run: yarn audit
+    gems-audit:
+      tags: backend security
+      run: bundle audit
+    gems-memory-leak:
+      tags: backend memory
+      run: bundle leak
+pre-commit:
+  parallel: true
+  commands:
+    js:
+      glob: "*.js"
+      run: "yarn prettier --write {staged_files} && git add {staged_files}"
+    css:
+      glob: "frontend/**/*.{css,pcss}"
+      run: "yarn prettier --write {staged_files} && yarn stylelint --fix {staged_files} && git add {staged_files}"
+    commit-message:
+      run: "yarn commitlint --from HEAD~1 --to HEAD"

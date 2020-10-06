@@ -1,0 +1,7 @@
+# OPTIONAL: the subpath of your site, e.g. /blog
+baseurl: ""
+# the base hostname & protocol for your site, e.g. https://example.com
+url: "https://www.andrewm.codes"
+
+permalink: pretty
+timezone: America/New_York

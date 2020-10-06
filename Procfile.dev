@@ -1,0 +1,4 @@
+webpack-dev: NODE_ENV=development yarn webpack:dev
+bridgetown-serve: NODE_ENV=development sleep 4 && bundle exec bridgetown serve --port 4000
+browser-sync: NODE_ENV=development sleep 8 && yarn sync
+netlify-cms: yarn netlify-cms-proxy-server

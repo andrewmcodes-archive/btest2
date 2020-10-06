@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "feat({{collection}}): create {{slug}}"
+    update: "chore({{collection}}): update {{slug}}"
+    delete: "chore({{collection}}): delete {{slug}}"
+    uploadMedia: "feat(assets): upload {{path}}"
+    deleteMedia: "chore(assets): delete {{path}}"
+
+local_backend: true
+media_folder: src/assets/
+publish_mode: editorial_workflow
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: "Post"
+    folder: src/_posts
+    format: frontmatter
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Excerpt, name: excerpt, widget: markdown }
+      - { label: Thumbnail Image Path, name: thumb_img_path, widget: string }
+      - { label: Header Image Path, name: header_img_path, widget: string }
+      - { label: Canonical Url, name: canonical_url, widget: string }
+      - { label: Tags, name: tags, widget: list }
+  # - name: "page"
+  #   label: "Page"
+  #   folder: "src/pages"
+  #   sort: "title:asc"
+  #   create: true
+  #   # slug: "{{slug}}"
+  #   fields:
+  #     - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+  #     - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+  #     - { label: "Permalink", name: "permalink", widget: "hidden" }
+  #     - { label: "Body", name: "body", widget: "markdown", required: false }
+  # - { label: Title, name: title, widget: string, default: Uses }
+  # - { label: Layout, name: layout, widget: hidden, default: content }
+  # - { label: Permalink, name: permalink, widget: string, default: "/uses/" }
+  # - { label: Body, name: body, widget: markdown }
+  # - name: pages
+  #   label: Pages
+  #   files:
+  #     - label: Index Page
+  #       name: index
+  #       file: src/index.md
+  #       fields:
+  #         - { label: Layout, name: title, widget: hidden, default: home }
+  #         - { label: Body, name: body, widget: markdown }
+  #     - label: About Page
+  #       name: about
+  #       file: src/about.md
+  #       fields:
+  #         - { label: Title, name: title, widget: hidden, default: About }
+  #         - { label: Layout, name: layout, widget: hidden, default: page }
+  #         - { label: Permalink, name: permalink, widget: string, default: "/about/" }
+  #         - { label: Body, name: body, widget: markdown }
