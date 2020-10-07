@@ -16,9 +16,9 @@ fields:
 - type: text
   name: permalink
   label: Permalink
-  description: 'The output path for your pages, posts, or collections.'
+  description: The output path for your pages, posts, or collections.
   hidden: true
-  default: '/posts/:slug:output_ext'
+  default: "/posts/:slug:output_ext"
 - type: text
   name: description
   label: Site Description
@@ -100,5 +100,3 @@ fields:
   label: Exclude
   description: Exclude directories and/or files from the conversion.
   hidden: true
-pages:
-- _config.yml
