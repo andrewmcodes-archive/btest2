@@ -9,8 +9,8 @@ backend:
     deleteMedia: "chore(assets): delete {{path}}"
 
 local_backend: true
+
 media_folder: src/assets/
-publish_mode: editorial_workflow
 
 collections:
   - name: posts
@@ -30,17 +30,17 @@ collections:
       - { label: Header Image Path, name: header_img_path, widget: string }
       - { label: Canonical Url, name: canonical_url, widget: string }
       - { label: Tags, name: tags, widget: list }
-  # - name: "page"
-  #   label: "Page"
-  #   folder: "src/pages"
-  #   sort: "title:asc"
-  #   create: true
-  #   # slug: "{{slug}}"
-  #   fields:
-  #     - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-  #     - { label: "Title", name: "title", widget: "string", tagname: "h1" }
-  #     - { label: "Permalink", name: "permalink", widget: "hidden" }
-  #     - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "page"
+    label: "Page"
+    folder: "src/pages"
+    sort: "title:asc"
+    create: true
+    # slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - { label: "Permalink", name: "permalink", widget: "hidden" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
   # - { label: Title, name: title, widget: string, default: Uses }
   # - { label: Layout, name: layout, widget: hidden, default: content }
   # - { label: Permalink, name: permalink, widget: string, default: "/uses/" }
