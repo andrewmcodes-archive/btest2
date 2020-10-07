@@ -27,3 +27,5 @@ fields:
   default: page
   config:
     required: true
+pages:
+- src/_podcasts/test.app
